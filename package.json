@@ -4,14 +4,24 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "ios": "react-native run-ios --simulator 'iPhone 8'",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint ."
   },
   "dependencies": {
+    "@apollo/react-hooks": "^3.1.1",
+    "@react-navigation/core": "^5.0.0-alpha.10",
+    "@react-navigation/native": "^5.0.0-alpha.8",
+    "@react-navigation/stack": "^5.0.0-alpha.19",
+    "@types/react": "^16.9.3",
+    "@types/react-native": "^0.60.16",
+    "apollo-boost": "^0.4.4",
+    "graphql": "^14.5.8",
+    "instabug-reactnative": "^8.7.0",
     "react": "16.9.0",
-    "react-native": "0.61.1"
+    "react-native": "0.61.1",
+    "react-native-screens": "^2.0.0-alpha.3"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
