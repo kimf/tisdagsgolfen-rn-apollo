@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import client from './apolloClient';
 import HomeScreen from './screens/Home';
+import EventsScreen from './screens/Events';
 
 if (
   Platform.OS === 'android' &&
@@ -23,8 +24,17 @@ const App = () => {
   return (
     <ApolloProvider client={client}>
       <NavigationNativeContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{ title: 'Banana' }}
+          />
+          <Stack.Screen
+            name="Events"
+            component={EventsScreen}
+            options={{ title: 'Eventanados' }}
+          />
         </Stack.Navigator>
       </NavigationNativeContainer>
     </ApolloProvider>
