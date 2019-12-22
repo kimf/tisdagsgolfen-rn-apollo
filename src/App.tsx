@@ -1,6 +1,6 @@
 import React from 'react';
 import { Platform, UIManager } from 'react-native';
-import { enableScreens } from 'react-native-screens';
+import { useScreens } from 'react-native-screens';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { NavigationNativeContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -17,7 +17,7 @@ if (
   UIManager.setLayoutAnimationEnabledExperimental(true);
 }
 
-enableScreens();
+useScreens();
 
 const Stack = createStackNavigator();
 

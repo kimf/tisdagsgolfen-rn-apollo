@@ -13,8 +13,6 @@ const Home = ({ navigation }) => {
     return null;
   }
 
-  // React.useEffect(() => {}, []);
-
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Seasons</Text>

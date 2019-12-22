@@ -1,5 +1,7 @@
 # Notes
 
+- Me.. use yarn, no npm, no yarn.. Yarn for now!
+
 - use "whyDidYouUpdate" and Profiler heavily!
 - Kolla i \_Archived/tisdagsgolfen-hasura-react-apollo för react-cache användande
 

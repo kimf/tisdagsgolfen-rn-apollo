@@ -1,4 +1,5 @@
 import { AppRegistry, processColor } from 'react-native';
+import 'react-native-gesture-handler';
 // import Instabug from 'instabug-reactnative';
 
 import App from './src/App';
