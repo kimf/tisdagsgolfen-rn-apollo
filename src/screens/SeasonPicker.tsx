@@ -1,12 +1,19 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 import { useQuery } from '@apollo/react-hooks';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 import allSeasonsQuery from '../graphql/queries/allSeasonsQuery';
 import { allSeasonsQuery_seasons as Season } from '../../generatedTypes';
+import { RootParamList } from '../App';
 
-const Home = ({ navigation }) => {
-  const goToSeason = (id: number) => navigation.navigate('Home', { id });
+type Props = {
+  navigation: StackNavigationProp<RootParamList, 'Seasons'>;
+};
+
+const SeasonPicker: React.FC<Props> = ({ navigation }) => {
+  const goToSeason = (seasonId: string) =>
+    navigation.navigate('Home', { seasonId });
   const { loading, data } = useQuery<{ seasons: Season[] }>(allSeasonsQuery);
 
   if (loading) {
@@ -19,11 +26,11 @@ const Home = ({ navigation }) => {
       {data.seasons.map(season => (
         <Text key={season.id}>
           {season.name} - {season.status}
-          <Button title="Go" onPress={() => goToSeason(season.id)} />
+          <Button title="Go" onPress={() => goToSeason(`${season.id}`)} />
         </Text>
       ))}
     </View>
   );
 };
 
-export default Home;
+export default SeasonPicker;

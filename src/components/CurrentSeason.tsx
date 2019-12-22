@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-import { SeasonQuery_seasons as Season } from '../../generatedTypes';
+import { seasonQuery_season as Season } from '../../generatedTypes';
 
 const CurrentSeason: React.FC<{ season: Season }> = ({ season }) => {
   return (

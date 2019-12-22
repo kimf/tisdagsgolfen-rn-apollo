@@ -25,21 +25,25 @@ export interface allSeasonsQuery {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: lastSeasonQuery
+// GraphQL query operation: seasonQuery
 // ====================================================
 
-export interface lastSeasonQuery_seasons {
+export interface seasonQuery_season {
   __typename: "seasons";
   id: number;
   name: string;
   status: season_status_enum;
 }
 
-export interface lastSeasonQuery {
+export interface seasonQuery {
   /**
-   * fetch data from the table: "seasons"
+   * fetch data from the table: "seasons" using primary key columns
    */
-  seasons: lastSeasonQuery_seasons[];
+  season: seasonQuery_season | null;
+}
+
+export interface seasonQueryVariables {
+  id: number;
 }
 
 /* tslint:disable */

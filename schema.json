@@ -39,7 +39,7 @@
               },
               {
                 "name": "limit",
-                "description": "limit the nuber of rows returned",
+                "description": "limit the number of rows returned",
                 "type": {
                   "kind": "SCALAR",
                   "name": "Int",
@@ -130,7 +130,7 @@
               },
               {
                 "name": "limit",
-                "description": "limit the nuber of rows returned",
+                "description": "limit the number of rows returned",
                 "type": {
                   "kind": "SCALAR",
                   "name": "Int",
@@ -240,7 +240,7 @@
               },
               {
                 "name": "limit",
-                "description": "limit the nuber of rows returned",
+                "description": "limit the number of rows returned",
                 "type": {
                   "kind": "SCALAR",
                   "name": "Int",
@@ -331,7 +331,7 @@
               },
               {
                 "name": "limit",
-                "description": "limit the nuber of rows returned",
+                "description": "limit the number of rows returned",
                 "type": {
                   "kind": "SCALAR",
                   "name": "Int",
@@ -441,7 +441,7 @@
               },
               {
                 "name": "limit",
-                "description": "limit the nuber of rows returned",
+                "description": "limit the number of rows returned",
                 "type": {
                   "kind": "SCALAR",
                   "name": "Int",
@@ -532,7 +532,7 @@
               },
               {
                 "name": "limit",
-                "description": "limit the nuber of rows returned",
+                "description": "limit the number of rows returned",
                 "type": {
                   "kind": "SCALAR",
                   "name": "Int",
@@ -642,7 +642,7 @@
               },
               {
                 "name": "limit",
-                "description": "limit the nuber of rows returned",
+                "description": "limit the number of rows returned",
                 "type": {
                   "kind": "SCALAR",
                   "name": "Int",
@@ -733,7 +733,7 @@
               },
               {
                 "name": "limit",
-                "description": "limit the nuber of rows returned",
+                "description": "limit the number of rows returned",
                 "type": {
                   "kind": "SCALAR",
                   "name": "Int",
@@ -4155,6 +4155,16 @@
               }
             },
             "defaultValue": null
+          },
+          {
+            "name": "where",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "event_status_bool_exp",
+              "ofType": null
+            },
+            "defaultValue": null
           }
         ],
         "interfaces": null,
@@ -4297,6 +4307,16 @@
               }
             },
             "defaultValue": null
+          },
+          {
+            "name": "where",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "players_bool_exp",
+              "ofType": null
+            },
+            "defaultValue": null
           }
         ],
         "interfaces": null,
@@ -4429,6 +4449,16 @@
               }
             },
             "defaultValue": null
+          },
+          {
+            "name": "where",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "season_status_bool_exp",
+              "ofType": null
+            },
+            "defaultValue": null
           }
         ],
         "interfaces": null,
@@ -4549,6 +4579,16 @@
                   }
                 }
               }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "where",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "seasons_bool_exp",
+              "ofType": null
             },
             "defaultValue": null
           }
@@ -4824,7 +4864,7 @@
               },
               {
                 "name": "limit",
-                "description": "limit the nuber of rows returned",
+                "description": "limit the number of rows returned",
                 "type": {
                   "kind": "SCALAR",
                   "name": "Int",
@@ -4915,7 +4955,7 @@
               },
               {
                 "name": "limit",
-                "description": "limit the nuber of rows returned",
+                "description": "limit the number of rows returned",
                 "type": {
                   "kind": "SCALAR",
                   "name": "Int",
@@ -5025,7 +5065,7 @@
               },
               {
                 "name": "limit",
-                "description": "limit the nuber of rows returned",
+                "description": "limit the number of rows returned",
                 "type": {
                   "kind": "SCALAR",
                   "name": "Int",
@@ -5116,7 +5156,7 @@
               },
               {
                 "name": "limit",
-                "description": "limit the nuber of rows returned",
+                "description": "limit the number of rows returned",
                 "type": {
                   "kind": "SCALAR",
                   "name": "Int",
@@ -5226,7 +5266,7 @@
               },
               {
                 "name": "limit",
-                "description": "limit the nuber of rows returned",
+                "description": "limit the number of rows returned",
                 "type": {
                   "kind": "SCALAR",
                   "name": "Int",
@@ -5317,7 +5357,7 @@
               },
               {
                 "name": "limit",
-                "description": "limit the nuber of rows returned",
+                "description": "limit the number of rows returned",
                 "type": {
                   "kind": "SCALAR",
                   "name": "Int",
@@ -5427,7 +5467,7 @@
               },
               {
                 "name": "limit",
-                "description": "limit the nuber of rows returned",
+                "description": "limit the number of rows returned",
                 "type": {
                   "kind": "SCALAR",
                   "name": "Int",
@@ -5518,7 +5558,7 @@
               },
               {
                 "name": "limit",
-                "description": "limit the nuber of rows returned",
+                "description": "limit the number of rows returned",
                 "type": {
                   "kind": "SCALAR",
                   "name": "Int",
@@ -6407,29 +6447,6 @@
         "possibleTypes": null
       },
       {
-        "kind": "ENUM",
-        "name": "conflict_action",
-        "description": "conflict action",
-        "fields": null,
-        "inputFields": null,
-        "interfaces": null,
-        "enumValues": [
-          {
-            "name": "ignore",
-            "description": "ignore the insert on this row",
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "update",
-            "description": "update the row with the given values",
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "possibleTypes": null
-      },
-      {
         "kind": "INPUT_OBJECT",
         "name": "event_status_aggregate_order_by",
         "description": "order by aggregate values of table \"event_status\"",
@@ -6553,29 +6570,6 @@
         ],
         "interfaces": null,
         "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "ENUM",
-        "name": "event_status_enum",
-        "description": null,
-        "fields": null,
-        "inputFields": null,
-        "interfaces": null,
-        "enumValues": [
-          {
-            "name": "FINISHED",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "PENDING",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
         "possibleTypes": null
       },
       {
