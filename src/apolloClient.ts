@@ -8,7 +8,7 @@ const dataIdFromObject = result => {
 };
 
 export default new ApolloClient({
-  uri: 'http://10.2.7.47:3001/api/graphql',
+  uri: 'http://localhost:8080/v1/graphql',
   cache: new InMemoryCache({
     dataIdFromObject,
   }),
