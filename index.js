@@ -1,8 +1,10 @@
-import { AppRegistry, processColor } from 'react-native';
+import { AppRegistry } from 'react-native';
 import 'react-native-gesture-handler';
 import { Platform, UIManager } from 'react-native';
 import { enableScreens } from 'react-native-screens';
 // import Instabug from 'instabug-reactnative';
+
+require('react-native').unstable_enableLogBox();
 
 import App from './src/App';
 import { name as appName } from './app.json';

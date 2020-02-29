@@ -1,6 +1,6 @@
 import React from 'react';
 import { ApolloProvider } from '@apollo/react-hooks';
-import { NavigationNativeContainer } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import storage from './localStorage';
@@ -55,7 +55,7 @@ const App = () => {
 
   return (
     <ApolloProvider client={client}>
-      <NavigationNativeContainer initialState={initialState}>
+      <NavigationContainer initialState={initialState}>
         <Stack.Navigator initialRouteName="Seasons">
           <Stack.Screen
             name="Seasons"
@@ -76,7 +76,7 @@ const App = () => {
             options={{ title: 'Events' }}
           />
         </Stack.Navigator>
-      </NavigationNativeContainer>
+      </NavigationContainer>
     </ApolloProvider>
   );
 };

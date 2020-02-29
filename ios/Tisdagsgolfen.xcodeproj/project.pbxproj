@@ -17,9 +17,9 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* TisdagsgolfenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TisdagsgolfenTests.m */; };
 		7640C336600F7C085E9137E2 /* libPods-Tisdagsgolfen-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79B889C087F0631D32D02F5A /* libPods-Tisdagsgolfen-tvOS.a */; };
-		B2466CF285BBF8046F40D76A /* libPods-TisdagsgolfenTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 292C2A50C26611DBCC9D9106 /* libPods-TisdagsgolfenTests.a */; };
 		E819649A6EA087D6F949F6C2 /* libPods-Tisdagsgolfen-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D94BB8DFC97080A3556F1F45 /* libPods-Tisdagsgolfen-tvOSTests.a */; };
 		EECE218549CED3FFC63D124E /* libPods-Tisdagsgolfen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B2CCCA629101A641934D27 /* libPods-Tisdagsgolfen.a */; };
+		FDABE734F415CC5566B32B25 /* libPods-Tisdagsgolfen-TisdagsgolfenTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7835B2ECF7019765A7E2C1C2 /* libPods-Tisdagsgolfen-TisdagsgolfenTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,19 +54,21 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Tisdagsgolfen/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tisdagsgolfen/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Tisdagsgolfen/main.m; sourceTree = "<group>"; };
-		292C2A50C26611DBCC9D9106 /* libPods-TisdagsgolfenTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TisdagsgolfenTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E47B1E0B4A5D006451C7 /* Tisdagsgolfen-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tisdagsgolfen-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Tisdagsgolfen-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tisdagsgolfen-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F35C29EF3ADD9E9431B5C54 /* Pods-Tisdagsgolfen-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tisdagsgolfen-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Tisdagsgolfen-tvOS/Pods-Tisdagsgolfen-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		5568A4A778DA5973BF8A610A /* Pods-Tisdagsgolfen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tisdagsgolfen.debug.xcconfig"; path = "Target Support Files/Pods-Tisdagsgolfen/Pods-Tisdagsgolfen.debug.xcconfig"; sourceTree = "<group>"; };
 		676A684AEFB6239D7E978DE5 /* Pods-TisdagsgolfenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TisdagsgolfenTests.release.xcconfig"; path = "Target Support Files/Pods-TisdagsgolfenTests/Pods-TisdagsgolfenTests.release.xcconfig"; sourceTree = "<group>"; };
+		7835B2ECF7019765A7E2C1C2 /* libPods-Tisdagsgolfen-TisdagsgolfenTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tisdagsgolfen-TisdagsgolfenTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79B889C087F0631D32D02F5A /* libPods-Tisdagsgolfen-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tisdagsgolfen-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A3745D1AAC4BC3BFC81B4D /* Pods-Tisdagsgolfen-TisdagsgolfenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tisdagsgolfen-TisdagsgolfenTests.debug.xcconfig"; path = "Target Support Files/Pods-Tisdagsgolfen-TisdagsgolfenTests/Pods-Tisdagsgolfen-TisdagsgolfenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B7B2CCCA629101A641934D27 /* libPods-Tisdagsgolfen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tisdagsgolfen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D94BB8DFC97080A3556F1F45 /* libPods-Tisdagsgolfen-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tisdagsgolfen-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEE31B99A52B4B41ADF5BA2 /* Pods-Tisdagsgolfen-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tisdagsgolfen-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Tisdagsgolfen-tvOSTests/Pods-Tisdagsgolfen-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E87B21EF5C8814C95703CA04 /* Pods-TisdagsgolfenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TisdagsgolfenTests.debug.xcconfig"; path = "Target Support Files/Pods-TisdagsgolfenTests/Pods-TisdagsgolfenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		FE57547CD8A0521914485707 /* Pods-Tisdagsgolfen-TisdagsgolfenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tisdagsgolfen-TisdagsgolfenTests.release.xcconfig"; path = "Target Support Files/Pods-Tisdagsgolfen-TisdagsgolfenTests/Pods-Tisdagsgolfen-TisdagsgolfenTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2466CF285BBF8046F40D76A /* libPods-TisdagsgolfenTests.a in Frameworks */,
+				FDABE734F415CC5566B32B25 /* libPods-Tisdagsgolfen-TisdagsgolfenTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +146,7 @@
 				B7B2CCCA629101A641934D27 /* libPods-Tisdagsgolfen.a */,
 				79B889C087F0631D32D02F5A /* libPods-Tisdagsgolfen-tvOS.a */,
 				D94BB8DFC97080A3556F1F45 /* libPods-Tisdagsgolfen-tvOSTests.a */,
-				292C2A50C26611DBCC9D9106 /* libPods-TisdagsgolfenTests.a */,
+				7835B2ECF7019765A7E2C1C2 /* libPods-Tisdagsgolfen-TisdagsgolfenTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -160,6 +162,8 @@
 				0D122AF33EC58C250D3AAAA9 /* Pods-Tisdagsgolfen-tvOSTests.release.xcconfig */,
 				E87B21EF5C8814C95703CA04 /* Pods-TisdagsgolfenTests.debug.xcconfig */,
 				676A684AEFB6239D7E978DE5 /* Pods-TisdagsgolfenTests.release.xcconfig */,
+				84A3745D1AAC4BC3BFC81B4D /* Pods-Tisdagsgolfen-TisdagsgolfenTests.debug.xcconfig */,
+				FE57547CD8A0521914485707 /* Pods-Tisdagsgolfen-TisdagsgolfenTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -208,6 +212,7 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				3C46E5CE145087A348B8D3E6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -432,6 +437,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3C46E5CE145087A348B8D3E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tisdagsgolfen-TisdagsgolfenTests/Pods-Tisdagsgolfen-TisdagsgolfenTests-frameworks.sh",
+				"${PODS_ROOT}/../../node_modules/instabug-reactnative/ios/Instabug.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instabug.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tisdagsgolfen-TisdagsgolfenTests/Pods-Tisdagsgolfen-TisdagsgolfenTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D56C893DCE431D3BF0B5103B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -447,7 +470,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TisdagsgolfenTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Tisdagsgolfen-TisdagsgolfenTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -599,7 +622,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E87B21EF5C8814C95703CA04 /* Pods-TisdagsgolfenTests.debug.xcconfig */;
+			baseConfigurationReference = 84A3745D1AAC4BC3BFC81B4D /* Pods-Tisdagsgolfen-TisdagsgolfenTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -609,6 +632,10 @@
 				INFOPLIST_FILE = TisdagsgolfenTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DFB_SONARKIT_ENABLED=1",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -622,13 +649,17 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 676A684AEFB6239D7E978DE5 /* Pods-TisdagsgolfenTests.release.xcconfig */;
+			baseConfigurationReference = FE57547CD8A0521914485707 /* Pods-Tisdagsgolfen-TisdagsgolfenTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = TisdagsgolfenTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DFB_SONARKIT_ENABLED=1",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -646,9 +677,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = NO;
+				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = Tisdagsgolfen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DFB_SONARKIT_ENABLED=1",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -668,6 +703,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = Tisdagsgolfen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DFB_SONARKIT_ENABLED=1",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -694,6 +733,10 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Tisdagsgolfen-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DFB_SONARKIT_ENABLED=1",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -722,6 +765,10 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Tisdagsgolfen-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DFB_SONARKIT_ENABLED=1",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -749,6 +796,10 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Tisdagsgolfen-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DFB_SONARKIT_ENABLED=1",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -776,6 +827,10 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Tisdagsgolfen-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DFB_SONARKIT_ENABLED=1",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -836,6 +891,12 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -882,6 +943,12 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
