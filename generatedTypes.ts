@@ -1,5 +1,28 @@
 /* tslint:disable */
 /* eslint-disable */
+// @generated
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: activeEventsQuery
+// ====================================================
+
+export interface activeEventsQuery_events {
+  __typename: "events";
+  id: number;
+  status: event_status_enum;
+}
+
+export interface activeEventsQuery {
+  /**
+   * fetch data from the table: "events"
+   */
+  events: activeEventsQuery_events[];
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// @generated
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -22,6 +45,7 @@ export interface allSeasonsQuery {
 
 /* tslint:disable */
 /* eslint-disable */
+// @generated
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -48,11 +72,17 @@ export interface seasonQueryVariables {
 
 /* tslint:disable */
 /* eslint-disable */
+// @generated
 // This file was automatically generated and should not be edited.
 
 //==============================================================
 // START Enums and Input Objects
 //==============================================================
+
+export enum event_status_enum {
+  FINISHED = "FINISHED",
+  PENDING = "PENDING",
+}
 
 export enum season_status_enum {
   CLOSED = "CLOSED",

@@ -1,44 +1,69 @@
 import React from 'react';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 
 import storage from './localStorage';
 import client from './apolloClient';
 import HomeScreen from './screens/Home';
 import EventsScreen from './screens/Events';
+import PlayScreen from './screens/Play';
 import SeasonPicker from './screens/SeasonPicker';
 
 export type RootParamList = {
   Seasons: {};
   Home: { seasonId: string };
   Events: {};
+  Play: { eventId?: string };
 };
 
 const Stack = createNativeStackNavigator<RootParamList>();
 
+const appReducer = (state, action) => {
+  switch (action.type) {
+    case 'noCurrentSeasonId': {
+      return {
+        ...state,
+        currentSeasonId: null,
+        readyForStartup: true,
+      };
+    }
+
+    case 'haveCurrentSeasonId': {
+      return {
+        ...state,
+        currentSeasonId: action.currentSeasonId,
+        readyForStartup: true,
+      };
+    }
+  }
+};
+
 const App = () => {
-  const [readyForStartup, setReadyForStartup] = React.useState(false);
-  const [currentSeasonId, setCurrentSeasonId] = React.useState();
+  const [state, dispatch] = React.useReducer(appReducer, {
+    readyForStartup: false,
+    currentSeasonId: null,
+  });
 
   React.useEffect(() => {
     const fetchCurrentSeason = async () => {
       // await storage.clearStorage();
       const csId = await storage.get('currentSeasonId');
       if (csId !== null) {
-        setCurrentSeasonId(csId);
+        dispatch({ type: 'haveCurrentSeasonId', currentSeasonId: csId });
+      } else {
+        dispatch({ type: 'noCurrentSeasonId' });
       }
-      setReadyForStartup(true);
     };
 
     fetchCurrentSeason();
   }, []);
 
-  if (!readyForStartup) {
+  if (!state.readyForStartup) {
     return null;
   }
 
-  const initialState = currentSeasonId
+  const initialState = state.currentSeasonId
     ? {
         index: 1,
         routes: [
@@ -46,7 +71,7 @@ const App = () => {
           {
             name: 'Home',
             params: {
-              seasonId: currentSeasonId,
+              seasonId: state.currentSeasonId,
             },
           },
         ],
@@ -60,20 +85,25 @@ const App = () => {
           <Stack.Screen
             name="Seasons"
             component={SeasonPicker}
-            options={{ title: 'Seasons' }}
+            options={{ title: 'Säsonger' }}
           />
           <Stack.Screen
             name="Home"
             component={HomeScreen}
             options={{
-              title: 'Leaderboard',
+              title: 'Ledartavla',
               headerBackTitleVisible: false,
             }}
           />
           <Stack.Screen
             name="Events"
             component={EventsScreen}
-            options={{ title: 'Events' }}
+            options={{ title: 'Rundor' }}
+          />
+          <Stack.Screen
+            name="Play"
+            component={PlayScreen}
+            options={{ title: 'Spela', headerBackTitleVisible: false }}
           />
         </Stack.Navigator>
       </NavigationContainer>

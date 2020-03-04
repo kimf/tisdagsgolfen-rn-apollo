@@ -21,6 +21,8 @@ type Props = {
 
 const Home: React.FC<Props> = ({ navigation, route }) => {
   const goToEvents = () => navigation.navigate('Events');
+  const goPlay = () => navigation.navigate('Play');
+
   const { loading, data } = useQuery<seasonQueryType, seasonQueryVariables>(
     seasonQuery,
     {
@@ -31,6 +33,12 @@ const Home: React.FC<Props> = ({ navigation, route }) => {
   React.useEffect(() => {
     storage.set('currentSeasonId', route.params.seasonId);
   }, [route.params.seasonId]);
+
+  React.useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => <Button onPress={goPlay} title="SPELA" />,
+    });
+  }, [navigation]);
 
   if (loading) {
     return null;
