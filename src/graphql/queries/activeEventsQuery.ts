@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 
 const activeEventsQuery = gql`
   query activeEventsQuery {
-    events(where: { status: { _neq: FINISHED } }) {
+    events: allEvents(where: { status_not: FINISHED }
       id
       status
     }

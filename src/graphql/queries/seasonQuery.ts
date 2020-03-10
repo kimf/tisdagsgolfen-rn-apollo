@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 
 const seasonQuery = gql`
   query seasonQuery($id: Int!) {
-    season: seasons_by_pk(id: $id) {
+    season: Season(where: { id: $id }) {
       id
       name
       status

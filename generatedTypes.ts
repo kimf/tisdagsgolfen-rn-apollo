@@ -4,43 +4,21 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: activeEventsQuery
-// ====================================================
-
-export interface activeEventsQuery_events {
-  __typename: "events";
-  id: number;
-  status: event_status_enum;
-}
-
-export interface activeEventsQuery {
-  /**
-   * fetch data from the table: "events"
-   */
-  events: activeEventsQuery_events[];
-}
-
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
-
-// ====================================================
 // GraphQL query operation: allSeasonsQuery
 // ====================================================
 
 export interface allSeasonsQuery_seasons {
-  __typename: "seasons";
-  id: number;
-  name: string;
-  status: season_status_enum;
+  __typename: "Season";
+  id: string | null;
+  name: string | null;
+  status: SeasonStatusType | null;
 }
 
 export interface allSeasonsQuery {
   /**
-   * fetch data from the table: "seasons"
+   *  Search for all Season items which match the where clause. 
    */
-  seasons: allSeasonsQuery_seasons[];
+  seasons: (allSeasonsQuery_seasons | null)[] | null;
 }
 
 /* tslint:disable */
@@ -53,15 +31,15 @@ export interface allSeasonsQuery {
 // ====================================================
 
 export interface seasonQuery_season {
-  __typename: "seasons";
-  id: number;
-  name: string;
-  status: season_status_enum;
+  __typename: "Season";
+  id: string | null;
+  name: string | null;
+  status: SeasonStatusType | null;
 }
 
 export interface seasonQuery {
   /**
-   * fetch data from the table: "seasons" using primary key columns
+   *  Search for the Season item with the matching ID. 
    */
   season: seasonQuery_season | null;
 }
@@ -79,15 +57,9 @@ export interface seasonQueryVariables {
 // START Enums and Input Objects
 //==============================================================
 
-export enum event_status_enum {
-  FINISHED = "FINISHED",
-  PENDING = "PENDING",
-}
-
-export enum season_status_enum {
-  CLOSED = "CLOSED",
+export enum SeasonStatusType {
   FINALS = "FINALS",
-  PENDING = "PENDING",
+  FINISHED = "FINISHED",
   REGULAR = "REGULAR",
 }
 
