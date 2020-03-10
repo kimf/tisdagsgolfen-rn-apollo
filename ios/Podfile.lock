@@ -235,6 +235,8 @@ PODS:
     - React-cxxreact (= 0.62.0-rc.3)
     - React-jsi (= 0.62.0-rc.3)
   - React-jsinspector (0.62.0-rc.3)
+  - react-native-appearance (0.3.3):
+    - React
   - react-native-safe-area-context (0.7.3):
     - React
   - React-RCTActionSheet (0.62.0-rc.3):
@@ -298,11 +300,15 @@ PODS:
     - ReactCommon/callinvoker (= 0.62.0-rc.3)
   - RNCAsyncStorage (2.0.0):
     - React
+  - RNCMaskedView (0.1.7):
+    - React
   - RNGestureHandler (1.6.0):
     - React
   - RNReanimated (1.7.0):
     - React
   - RNScreens (2.2.0):
+    - React
+  - RNSVG (12.0.3):
     - React
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -331,6 +337,7 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
+  - react-native-appearance (from `../node_modules/react-native-appearance`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -344,9 +351,11 @@ DEPENDENCIES:
   - ReactCommon/callinvoker (from `../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage-backend-legacy`)"
+  - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - RNSVG (from `../node_modules/react-native-svg`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -395,6 +404,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
+  react-native-appearance:
+    :path: "../node_modules/react-native-appearance"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   React-RCTActionSheet:
@@ -419,12 +430,16 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-community/async-storage-backend-legacy"
+  RNCMaskedView:
+    :path: "../node_modules/@react-native-community/masked-view"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNSVG:
+    :path: "../node_modules/react-native-svg"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -455,6 +470,7 @@ SPEC CHECKSUMS:
   React-jsi: 848400a13b591f1d2ca250578d2b5690631a63ac
   React-jsiexecutor: 682eb036c919668cc8bcb56168276ddc90aa711e
   React-jsinspector: 932c488cd73b32d23a50f0b61ba43d0fec34f314
+  react-native-appearance: ff12122b6456efc29b3a22a3731eb54f7c291e69
   react-native-safe-area-context: 8260e5157617df4b72865f44006797f895b2ada7
   React-RCTActionSheet: 9e9496a7b0b90dd3292a2ccaa13cf9d30ae8f3fe
   React-RCTAnimation: 4cb3c452fdbfe5d545a783de6dc7caa0583b3fea
@@ -467,9 +483,11 @@ SPEC CHECKSUMS:
   React-RCTVibration: a1f0345d827a87a33e087d1f5773654494425ec6
   ReactCommon: 55870918392a39971fce8f8ee6d66d5f8d540862
   RNCAsyncStorage: b5de28ebf07f83fc83fe718cb17793c5cfe55181
+  RNCMaskedView: 90dd32f5b786bd562e876e1421ea77c700cbf71e
   RNGestureHandler: dde546180bf24af0b5f737c8ad04b6f3fa51609a
   RNReanimated: 031fe8d9ea93c2bd689a40f05320ef9d96f74d7f
   RNScreens: 812b79d384e2bea7eebc4ec981469160d4948fd5
+  RNSVG: 7e16ddfc6e00d5aa69c9eb83e699bcce5dcb85d4
   Yoga: 2a6a35d2c9c18c1e3db875b1f1ccfc2296b18a59
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 

@@ -1,35 +1,25 @@
 import React from 'react';
-import { View, Text, Image, ScrollView, StyleSheet } from 'react-native';
+import { Image, ScrollView, StyleSheet } from 'react-native';
 import { useQuery } from '@apollo/react-hooks';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { Layout, Text, Card } from '@ui-kitten/components';
 
 import allSeasonsQuery from '../graphql/queries/allSeasonsQuery';
 import { allSeasonsQuery_seasons as Season } from '../../generatedTypes';
-import { RootParamList } from '../App';
-import { TouchableHighlight } from 'react-native-gesture-handler';
+import { RootParamList } from '../Routes';
 
 const styles = StyleSheet.create({
-  row: {
-    flex: 1,
-    padding: 16,
-    paddingBottom: 24,
-    borderBottomColor: '#ccc',
-    borderBottomWidth: 1,
-    marginTop: 16,
-  },
-  innerRow: {
-    flex: 1,
-    width: '100%',
+  card: {
+    marginVertical: 8,
+    marginHorizontal: 8,
   },
   image: {
-    width: '100%',
-    height: 200,
+    flex: 1,
+    height: 140,
     resizeMode: 'cover',
   },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 16,
-    marginBottom: 8,
+  headerText: {
+    marginTop: 16,
   },
 });
 
@@ -47,28 +37,24 @@ const SeasonPicker: React.FC<Props> = ({ navigation }) => {
   }
 
   return (
-    <ScrollView>
-      {data.seasons.map((season, i) => (
-        <TouchableHighlight
-          key={i}
-          onPress={() => goToSeason(`${season.id}`)}
-          underlayColor="rgba(255, 255, 255, 0.5)"
-          style={[
-            styles.row,
-            { borderBottomWidth: i === data.seasons.length - 1 ? 0 : 1 },
-          ]}>
-          <View style={styles.innerRow}>
-            <Text style={styles.title}>
-              {season.name} - {season.status}
-            </Text>
+    <Layout level="4">
+      <ScrollView style={{ width: '100%', height: '100%' }}>
+        {data.seasons.map((season, i) => (
+          <Card
+            key={i}
+            onPress={() => goToSeason(`${season.id}`)}
+            style={styles.card}>
             <Image
               style={styles.image}
-              source={{ uri: 'https://placekitten.com/g/300/200' }}
+              source={{ uri: 'https://placekitten.com/g/600/200' }}
             />
-          </View>
-        </TouchableHighlight>
-      ))}
-    </ScrollView>
+            <Text style={styles.headerText} category="label">
+              {`${season.name} - ${season.status}`}
+            </Text>
+          </Card>
+        ))}
+      </ScrollView>
+    </Layout>
   );
 };
 

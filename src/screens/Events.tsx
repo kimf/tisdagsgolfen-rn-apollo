@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Layout, Icon, Text } from '@ui-kitten/components';
 
-const Events = () => {
+const Events: React.FC = () => {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Layout style={{ justifyContent: 'center', alignItems: 'center' }}>
       <Text>Events Screen</Text>
-    </View>
+    </Layout>
   );
 };
 

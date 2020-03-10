@@ -1,7 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native';
-
-import { seasonQuery_season as Season } from '../../generatedTypes';
+import { Text } from '@ui-kitten/components';
 
 const CurrentSeason: React.FC<{ season: Season }> = ({ season }) => {
   return (
