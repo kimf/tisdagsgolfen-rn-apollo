@@ -1,11 +1,15 @@
-import React from 'react';
-import { Text } from '@ui-kitten/components';
+import * as React from 'react';
+import * as Kitten from '@ui-kitten/components';
+
+import { seasonQuery_season as Season } from '../../generatedTypes';
 
 const CurrentSeason: React.FC<{ season: Season }> = ({ season }) => {
   return (
-    <Text key={season.id}>
-      {season.name} - {season.status}
-    </Text>
+    <Kitten.Layout style={{ padding: 16 }}>
+      <Kitten.Text category="h6">
+        {season.name} - {season.status}
+      </Kitten.Text>
+    </Kitten.Layout>
   );
 };
 

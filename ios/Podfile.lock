@@ -67,8 +67,6 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - instabug-reactnative (9.0.6):
-    - React
   - OpenSSL-Universal (1.0.2.19):
     - OpenSSL-Universal/Static (= 1.0.2.19)
   - OpenSSL-Universal/Static (1.0.2.19)
@@ -325,7 +323,6 @@ DEPENDENCIES:
   - FlipperKit/SKIOSNetworkPlugin (~> 0.31.0)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
-  - instabug-reactnative (from `../node_modules/instabug-reactnative`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
   - React (from `../node_modules/react-native/`)
@@ -384,8 +381,6 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
   glog:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
-  instabug-reactnative:
-    :path: "../node_modules/instabug-reactnative"
   RCTRequired:
     :path: "../node_modules/react-native/Libraries/RCTRequired"
   RCTTypeSafety:
@@ -459,7 +454,6 @@ SPEC CHECKSUMS:
   FlipperKit: 0730530396cb6a3879353fd204220ae1258d4f77
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
-  instabug-reactnative: 2afe6b4bac04a73c141596c64cdc0f91e468c566
   OpenSSL-Universal: 8b48cc0d10c1b2923617dfe5c178aa9ed2689355
   RCTRequired: 00d6d5211f4734af8a1163c0585df1069e34429f
   RCTTypeSafety: 01520a51aa6cb03f1175a68432d37c572f12422d
@@ -491,6 +485,6 @@ SPEC CHECKSUMS:
   Yoga: 2a6a35d2c9c18c1e3db875b1f1ccfc2296b18a59
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 9bc6c0d25956908732274d41e837c8cd0c5b4a36
+PODFILE CHECKSUM: 68b42f2f9f418be33cecf22e77b178ea65872a40
 
 COCOAPODS: 1.9.0.beta.3

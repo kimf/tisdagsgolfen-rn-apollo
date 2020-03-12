@@ -2,21 +2,24 @@ import * as React from 'react';
 import { NavigationContainer, InitialState } from '@react-navigation/native';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 
-import PlayScreen from './screens/Play';
-import HomeScreen from './screens/Home';
+import SeasonsScreen from './screens/Seasons/index';
+import SeasonScreen from './screens/Season/index';
+import PlayScreen from './screens/Play/index';
 import EventsScreen from './screens/Events';
-import SeasonPicker from './screens/SeasonPicker';
+import PlayerPicker from './screens/Play/PlayerPicker';
+
 import { useStore } from './store';
 
 export type RootParamList = {
   Seasons: {};
-  Home: { seasonId: string };
+  Season: { seasonId: string };
   Events: {};
   PlayStack: {};
 };
 
 export type PlayParamList = {
   Play: {};
+  SelectPlayers: {};
   SetupScoringSession: { eventId: string };
 };
 
@@ -28,24 +31,24 @@ const MainStackScreen = () => (
   <MainStack.Navigator
     initialRouteName="Seasons"
     screenOptions={{
-      headerStyle: { backgroundColor: '#eee' },
-      headerTitleStyle: { color: '#000' },
-      contentStyle: { backgroundColor: '#eee' },
+      // headerStyle: { backgroundColor: '#eee' },
+      // headerTitleStyle: { color: '#000' },
+      // contentStyle: { backgroundColor: '#eee' },
       headerLargeTitle: true,
     }}>
     <MainStack.Screen
       name="Seasons"
-      component={SeasonPicker}
+      component={SeasonsScreen}
       options={{
         title: 'Säsonger',
       }}
     />
     <MainStack.Screen
-      name="Home"
-      component={HomeScreen}
+      name="Season"
+      component={SeasonScreen}
       options={{
         title: 'Ledartavla',
-        headerBackTitleVisible: true,
+        headerBackTitleVisible: false,
       }}
     />
     <MainStack.Screen
@@ -53,7 +56,7 @@ const MainStackScreen = () => (
       component={EventsScreen}
       options={{
         title: 'Rundor',
-        headerBackTitleVisible: true,
+        headerBackTitleVisible: false,
       }}
     />
   </MainStack.Navigator>
@@ -62,16 +65,24 @@ const MainStackScreen = () => (
 const PlayStackScreen = () => (
   <PlayStack.Navigator
     screenOptions={{
-      headerStyle: { backgroundColor: '#ccc' },
-      headerTitleStyle: { color: '#c00' },
-      contentStyle: { backgroundColor: '#eee' },
-      headerLargeTitle: true,
+      // headerStyle: { backgroundColor: '#000' },
+      // headerTitleStyle: { color: '#fff' },
+      // contentStyle: { backgroundColor: '#fefefe' },
+      headerLargeTitle: false,
     }}>
     <PlayStack.Screen
       name="Play"
       component={PlayScreen}
       options={{
-        title: 'Spela golf',
+        title: 'Ny runda',
+        headerBackTitleVisible: false,
+      }}
+    />
+    <PlayStack.Screen
+      name="SelectPlayers"
+      component={PlayerPicker}
+      options={{
+        title: 'Välj Spelare',
         headerBackTitleVisible: false,
       }}
     />
@@ -96,7 +107,7 @@ const Routes = () => {
               routes: [
                 { name: 'Seasons' },
                 {
-                  name: 'Home',
+                  name: 'Season',
                   params: { seasonId: currentSeasonId },
                 },
               ],
@@ -107,11 +118,7 @@ const Routes = () => {
     : null;
 
   return (
-    <NavigationContainer
-      initialState={initialState}
-      onStateChange={state =>
-        console.log(state.routes.map(r => r.state.routes))
-      }>
+    <NavigationContainer initialState={initialState}>
       <RootStack.Navigator>
         <RootStack.Screen
           name="Main"
@@ -124,7 +131,8 @@ const Routes = () => {
           options={{
             headerShown: false,
             stackPresentation: 'modal',
-            stackAnimation: 'default', // flip, fade, none
+            stackAnimation: 'default', // flip, fade, none,
+            gestureEnabled: true, // Set this dynamically?
           }}
         />
       </RootStack.Navigator>

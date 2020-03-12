@@ -74,11 +74,6 @@ target 'Tisdagsgolfen' do
   pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
-  target 'TisdagsgolfenTests' do
-    inherit! :complete
-    # Pods for testing
-  end
-
   use_native_modules!
 
   # Enables Flipper.
@@ -89,14 +84,4 @@ target 'Tisdagsgolfen' do
   post_install do |installer|
     flipper_post_install(installer)
   end
-end
-
-target 'Tisdagsgolfen-tvOS' do
-  # Pods for Tisdagsgolfen-tvOS
-
-  target 'Tisdagsgolfen-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end

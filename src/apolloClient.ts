@@ -20,7 +20,7 @@ const dataIdFromObject = result => {
 // };
 
 export default new ApolloClient({
-  uri: 'http://localhost:3000/admin/api',
+  uri: 'https://tgapi.fransman.se/admin/api',
   cache: new InMemoryCache({
     dataIdFromObject,
   }),

@@ -17,8 +17,8 @@ const App = () => {
 
   return (
     <ApolloProvider client={client}>
-      <IconRegistry icons={EvaIconsPack} />
       <AppearanceProvider>
+        <IconRegistry icons={EvaIconsPack} />
         <ApplicationProvider mapping={mapping} theme={theme}>
           <StoreProvider>
             <Routes />

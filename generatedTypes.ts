@@ -36,17 +36,52 @@ export interface createEventMutationVariables {
 // GraphQL query operation: activeEventsQuery
 // ====================================================
 
-export interface activeEventsQuery_events {
+export interface activeEventsQuery_activeEvents_course {
+  __typename: "Course";
+  id: string | null;
+  club: string | null;
+  name: string | null;
+}
+
+export interface activeEventsQuery_activeEvents {
   __typename: "Event";
   id: string | null;
   status: EventStatusType | null;
+  special: boolean | null;
+  type: EventTypeType | null;
+  scoring: EventScoringType | null;
+  course: activeEventsQuery_activeEvents_course | null;
 }
 
 export interface activeEventsQuery {
   /**
    *  Search for all Event items which match the where clause. 
    */
-  events: (activeEventsQuery_events | null)[] | null;
+  activeEvents: (activeEventsQuery_activeEvents | null)[] | null;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// @generated
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: allPlayersQuery
+// ====================================================
+
+export interface allPlayersQuery_players {
+  __typename: "Player";
+  id: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  photo: string | null;
+}
+
+export interface allPlayersQuery {
+  /**
+   *  Search for all Player items which match the where clause. 
+   */
+  players: (allPlayersQuery_players | null)[] | null;
 }
 
 /* tslint:disable */
@@ -63,6 +98,7 @@ export interface allSeasonsQuery_seasons {
   id: string | null;
   name: string | null;
   status: SeasonStatusType | null;
+  photo: string | null;
 }
 
 export interface allSeasonsQuery {
@@ -81,12 +117,6 @@ export interface allSeasonsQuery {
 // GraphQL query operation: playSetupQuery
 // ====================================================
 
-export interface playSetupQuery_activeEvents {
-  __typename: "Event";
-  id: string | null;
-  status: EventStatusType | null;
-}
-
 export interface playSetupQuery_courses__holesMeta {
   __typename: "_QueryMeta";
   count: number | null;
@@ -101,15 +131,23 @@ export interface playSetupQuery_courses {
   _holesMeta: playSetupQuery_courses__holesMeta | null;
 }
 
+export interface playSetupQuery_players {
+  __typename: "Player";
+  id: string | null;
+  photo: string | null;
+  firstName: string | null;
+  lastName: string | null;
+}
+
 export interface playSetupQuery {
-  /**
-   *  Search for all Event items which match the where clause. 
-   */
-  activeEvents: (playSetupQuery_activeEvents | null)[] | null;
   /**
    *  Search for all Course items which match the where clause. 
    */
   courses: (playSetupQuery_courses | null)[] | null;
+  /**
+   *  Search for all Player items which match the where clause. 
+   */
+  players: (playSetupQuery_players | null)[] | null;
 }
 
 /* tslint:disable */
@@ -121,11 +159,29 @@ export interface playSetupQuery {
 // GraphQL query operation: seasonQuery
 // ====================================================
 
+export interface seasonQuery_season_activeEvents_course {
+  __typename: "Course";
+  id: string | null;
+  club: string | null;
+  name: string | null;
+}
+
+export interface seasonQuery_season_activeEvents {
+  __typename: "Event";
+  id: string | null;
+  status: EventStatusType | null;
+  special: boolean | null;
+  type: EventTypeType | null;
+  scoring: EventScoringType | null;
+  course: seasonQuery_season_activeEvents_course | null;
+}
+
 export interface seasonQuery_season {
   __typename: "Season";
   id: string | null;
   name: string | null;
   status: SeasonStatusType | null;
+  activeEvents: (seasonQuery_season_activeEvents | null)[] | null;
 }
 
 export interface seasonQuery {

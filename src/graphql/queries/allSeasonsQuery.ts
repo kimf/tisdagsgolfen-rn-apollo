@@ -6,6 +6,7 @@ const allSeasonsQuery = gql`
       id
       name
       status
+      photo
     }
   }
 `;

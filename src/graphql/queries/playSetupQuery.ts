@@ -2,10 +2,6 @@ import gql from 'graphql-tag';
 
 const playSetupQuery = gql`
   query playSetupQuery {
-    activeEvents: allEvents(where: { status_not: FINISHED }, first: 1) {
-      id
-      status
-    }
     courses: allCourses(orderBy: "club_DESC, name_DESC") {
       id
       club
@@ -14,6 +10,12 @@ const playSetupQuery = gql`
       _holesMeta {
         count
       }
+    }
+    players: allPlayers(orderBy: "firstName_DESC, lastName_DESC") {
+      id
+      photo
+      firstName
+      lastName
     }
   }
 `;

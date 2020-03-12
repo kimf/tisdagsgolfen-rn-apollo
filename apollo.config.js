@@ -2,7 +2,7 @@ module.exports = {
   client: {
     service: {
       name: 'development',
-      url: 'http://localhost:3000/admin/api',
+      url: 'https://tgapi.fransman.se/admin/api',
     },
   },
 };
