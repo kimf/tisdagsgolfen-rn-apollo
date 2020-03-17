@@ -1,12 +1,12 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 
 const seasonQuery = gql`
-  query seasonQuery($id: ID!) {
-    season: Season(where: { id: $id }) {
+  query seasonQuery($id: Int!) {
+    season: season(where: { id: $id }) {
       id
       name
       status
-      activeEvents: events(where: { status_not: FINISHED }, first: 1) {
+      events {
         id
         status
         special

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { NavigationContainer, InitialState } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 
 import SeasonsScreen from './screens/Seasons/index';
@@ -9,6 +9,7 @@ import EventsScreen from './screens/Events';
 import PlayerPicker from './screens/Play/PlayerPicker';
 
 import { useStore } from './store';
+import { EventType, EventScoring } from '../types/generatedTypes';
 
 export type RootParamList = {
   Seasons: {};
@@ -19,8 +20,18 @@ export type RootParamList = {
 
 export type PlayParamList = {
   Play: {};
-  SelectPlayers: {};
-  SetupScoringSession: { eventId: string };
+  PlayerPicker: {
+    event: {
+      id: string;
+      special: boolean;
+      type: EventType;
+      scoring: EventScoring;
+      course: {
+        club: string;
+        name: string;
+      };
+    };
+  };
 };
 
 const MainStack = createNativeStackNavigator<RootParamList>();
@@ -79,7 +90,7 @@ const PlayStackScreen = () => (
       }}
     />
     <PlayStack.Screen
-      name="SelectPlayers"
+      name="PlayerPicker"
       component={PlayerPicker}
       options={{
         title: 'Välj Spelare',

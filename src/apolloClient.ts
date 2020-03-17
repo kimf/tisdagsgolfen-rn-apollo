@@ -1,11 +1,4 @@
-import ApolloClient, { InMemoryCache, gql } from 'apollo-boost';
-
-const dataIdFromObject = result => {
-  if (result.id && result.__typename) {
-    return result.__typename + result.id;
-  }
-  return null;
-};
+import { ApolloClient, InMemoryCache } from '@apollo/client';
 
 // const typeDefs = gql`
 //   extend type allSeasonsQuery_seasons {
@@ -20,10 +13,8 @@ const dataIdFromObject = result => {
 // };
 
 export default new ApolloClient({
-  uri: 'https://tgapi.fransman.se/admin/api',
-  cache: new InMemoryCache({
-    dataIdFromObject,
-  }),
+  uri: 'https://tisdagsgolfen-2020.herokuapp.com/graphql',
+  cache: new InMemoryCache(),
   // typeDefs,
   // resolvers,
 });

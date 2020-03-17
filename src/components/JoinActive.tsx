@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as Kitten from '@ui-kitten/components';
 import { View } from 'react-native';
 
-import { playSetupQuery_activeEvents as ActiveEvent } from '../../generatedTypes';
+import { seasonQuery_season_events as ActiveEvent } from '../../types/generatedTypes';
 
 interface IProps {
   onJoin: () => void;

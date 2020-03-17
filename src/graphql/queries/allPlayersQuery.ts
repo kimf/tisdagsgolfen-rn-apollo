@@ -1,14 +1,13 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 
 const allPlayersQuery = gql`
   query allPlayersQuery {
-    players: allPlayers(orderBy: "firstName_DESC, lastName_DESC") {
+    players: players(orderBy: { firstName: desc}) {
       id
+      photo
       firstName
       lastName
-      photo
     }
   }
 `;
-
 export default allPlayersQuery;

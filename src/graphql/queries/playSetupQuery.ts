@@ -1,21 +1,15 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 
 const playSetupQuery = gql`
   query playSetupQuery {
-    courses: allCourses(orderBy: "club_DESC, name_DESC") {
+    courses: courses(orderBy: {name: desc}) {
       id
       club
       name
       par
-      _holesMeta {
-        count
+      holes {
+        id
       }
-    }
-    players: allPlayers(orderBy: "firstName_DESC, lastName_DESC") {
-      id
-      photo
-      firstName
-      lastName
     }
   }
 `;

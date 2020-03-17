@@ -1,38 +1,91 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Alert } from 'react-native';
 import * as Kitten from '@ui-kitten/components';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery, useMutation } from '@apollo/client';
 import { StackNavigationProp } from '@react-navigation/stack';
 
 import playSetupQuery from '../../graphql/queries/playSetupQuery';
+import seasonQuery from '../../graphql/queries/seasonQuery';
 import {
   playSetupQuery as QueryType,
-  playSetupQuery_courses as Course,
-  playSetupQuery_players as Player,
-} from '../../../generatedTypes';
+  createEventMutation_createOneEvent,
+  createEventMutationVariables,
+  EventType,
+  EventScoring,
+  seasonQuery as QSeason,
+} from '../../../types/generatedTypes';
+import createEventMutation from '../../graphql/mutations/createEventMutation';
 import { PlayParamList } from '../../Routes';
 
 import styles from './styles';
 import SegmentedButton from '../../components/shared/SegmentedButton';
+import { useStore } from '../../store';
 
 type Props = {
   navigation: StackNavigationProp<PlayParamList, 'Play'>;
 };
 
-type PlayState = {
-  courseId: string;
-  special: boolean;
-  type: 'INDIVIDUAL' | 'TEAM';
-  scoring: 'POINTS' | 'STROKES';
-};
+const CheckedIcon = style => (
+  <Kitten.Icon {...style} name="checkmark-square-outline" />
+);
+
+const UnCheckedIcon = style => <Kitten.Icon {...style} name="square-outline" />;
 
 const Play: React.FC<Props> = ({ navigation }) => {
   const { loading, data } = useQuery<QueryType>(playSetupQuery);
-  const [playState, setPlayState] = React.useState<PlayState>({
-    courseId: '',
+  const { currentSeasonId } = useStore();
+  const [playState, setPlayState] = React.useState<
+    createEventMutationVariables
+  >({
+    seasonId: Number(currentSeasonId),
+    courseId: null,
     special: false,
-    type: 'INDIVIDUAL',
-    scoring: 'POINTS',
+    type: EventType.INDIVIDUAL,
+    scoring: EventScoring.POINTS,
+  });
+
+  const [createEvent] = useMutation<
+    createEventMutation_createOneEvent,
+    createEventMutationVariables
+  >(createEventMutation, {
+    variables: { ...playState },
+    // update(cache, { data: result }) {
+    //   const course = data.courses.find(c => c.id === playState.courseId);
+    //   const { season } = cache.readQuery<QSeason>({ query: seasonQuery });
+    //   console.log(season);
+    //   cache.writeQuery({
+    //     query: seasonQuery,
+    //     data: {
+    //       season: {
+    //         ...season,
+    //         events: season.events.concat([
+    //           {
+    //             ...result,
+    //             special: playState.special,
+    //             type: playState.type,
+    //             scoring: playState.scoring,
+    //             course,
+    //           },
+    //         ]),
+    //       },
+    //     },
+    //   });
+    // },
+    onCompleted(savedEvent) {
+      const course = data.courses.find(c => c.id === playState.courseId);
+      navigation.replace('PlayerPicker', {
+        event: {
+          id: `${savedEvent.id}`,
+          special: playState.special,
+          type: playState.type,
+          scoring: playState.scoring,
+          course: {
+            club: course.club,
+            name: course.name,
+          },
+        },
+      });
+    },
   });
 
   if (loading) {
@@ -50,30 +103,37 @@ const Play: React.FC<Props> = ({ navigation }) => {
   const togglePlayType = () => {
     setPlayState({
       ...playState,
-      type: playState.type === 'INDIVIDUAL' ? 'TEAM' : 'INDIVIDUAL',
+      type:
+        playState.type === EventType.INDIVIDUAL
+          ? EventType.TEAM
+          : EventType.INDIVIDUAL,
     });
   };
 
   const toggleStrokes = () => {
     setPlayState({
       ...playState,
-      scoring: playState.scoring === 'POINTS' ? 'STROKES' : 'POINTS',
+      scoring:
+        playState.scoring === EventScoring.POINTS
+          ? EventScoring.STROKES
+          : EventScoring.POINTS,
     });
   };
 
-  const selectPlayers = () =>
-    navigation.navigate('SetupScoringSession', { ...playState });
+  const saveEvent = async () => {
+    await createEvent();
+  };
 
   const renderCourse = ({ item, index }) => (
     <Kitten.ListItem
       title={`${item.club} - ${item.name}`}
-      description={`Par: ${item.par} - ${item._holesMeta.count} hål`}
+      description={`Par: ${item.par} - ${item.holes.length} hål`}
       onPress={() => setCourse(index)}
       style={{
         backgroundColor:
           playState.courseId === item.id ? 'rgba(0,200,100,0.1)' : null,
       }}
-      icon={() => <Kitten.CheckBox checked={playState.courseId === item.id} />}
+      icon={playState.courseId === item.id ? CheckedIcon : UnCheckedIcon}
     />
   );
 
@@ -115,8 +175,11 @@ const Play: React.FC<Props> = ({ navigation }) => {
         <Kitten.List data={data.courses} renderItem={renderCourse} />
       </View>
 
-      <Kitten.Button style={styles.nextButton} onPress={selectPlayers}>
-        VÄLJ SPELARE
+      <Kitten.Button
+        style={styles.nextButton}
+        onPress={saveEvent}
+        disabled={!playState.courseId}>
+        SKAPA RUNDA
       </Kitten.Button>
     </Kitten.Layout>
   );

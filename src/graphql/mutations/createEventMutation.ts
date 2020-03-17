@@ -1,14 +1,14 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 
 const createEventMutation = gql`
   mutation createEventMutation(
-    $courseId: ID!
-    $seasonId: ID!
+    $courseId: Int!
+    $seasonId: Int!
     $special: Boolean!
-    $type: EventTypeType!
-    $scoring: EventScoringType!
+    $type: EventType!
+    $scoring: EventScoring!
   ) {
-    createEvent(
+    createOneEvent(
       data: {
         course: { connect: { id: $courseId } }
         season: { connect: { id: $seasonId } }
@@ -19,6 +19,10 @@ const createEventMutation = gql`
       }
     ) {
       id
+      status
+      course {
+        id
+      }
     }
   }
 `;

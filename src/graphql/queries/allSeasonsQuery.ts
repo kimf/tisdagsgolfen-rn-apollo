@@ -1,12 +1,14 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 
 const allSeasonsQuery = gql`
   query allSeasonsQuery {
-    seasons: allSeasons(orderBy: "name_DESC") {
+    seasons(orderBy: { name: desc }) {
       id
       name
       status
-      photo
+      finalInfo {
+        photo
+      }
     }
   }
 `;

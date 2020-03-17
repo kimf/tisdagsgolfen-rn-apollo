@@ -1,5 +1,5 @@
 import React from 'react';
-import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloProvider } from '@apollo/client';
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { mapping, dark, light } from '@eva-design/eva';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';

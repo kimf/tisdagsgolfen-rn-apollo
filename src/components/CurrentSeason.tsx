@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as Kitten from '@ui-kitten/components';
 
-import { seasonQuery_season as Season } from '../../generatedTypes';
+import { seasonQuery_season as Season } from '../../types/generatedTypes';
 
 const CurrentSeason: React.FC<{ season: Season }> = ({ season }) => {
   return (
