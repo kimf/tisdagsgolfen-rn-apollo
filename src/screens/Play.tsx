@@ -1,11 +1,24 @@
 import React from 'react';
-import { Layout, Text } from '@ui-kitten/components';
+import * as Kitten from '@ui-kitten/components';
+import { RouteProp } from '@react-navigation/core';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { PlayParamList } from '../Routes';
 
-const Play: React.FC = () => {
+type Props = {
+  navigation: StackNavigationProp<PlayParamList, 'Play'>;
+  route: RouteProp<PlayParamList, 'Play'>;
+};
+
+const Play: React.FC<Props> = ({ navigation, route }) => {
+  const cancelPlay = () => navigation.goBack();
+
   return (
-    <Layout style={{ justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Play Screen</Text>
-    </Layout>
+    <Kitten.Layout style={{ justifyContent: 'center', alignItems: 'center' }}>
+      <Kitten.Text>Play Screen</Kitten.Text>
+      <Kitten.Button status="danger" onPress={cancelPlay}>
+        AVSLUTA
+      </Kitten.Button>
+    </Kitten.Layout>
   );
 };
 

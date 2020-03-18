@@ -108,7 +108,7 @@ const Season: React.FC<Props> = ({ navigation, route }) => {
       {activeScoringSessionId && (
         <Kitten.Button
           status="danger"
-          onPress={() => setActiveScoringSessionId(null)}>
+          onPress={() => setActiveScoringSessionId(undefined)}>
           RADERA AKTIV SESSION
         </Kitten.Button>
       )}

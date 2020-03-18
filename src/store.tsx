@@ -29,9 +29,13 @@ const StoreProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [data, setData] = useState<Data>();
 
-  const setActiveScoringSessionId = async (id: string) => {
-    await storage.set('activeScoringSessionId', id);
-    setData({ ...data, activeScoringSessionId: id });
+  const setActiveScoringSessionId = async (id: string | undefined) => {
+    if (!id) {
+      await storage.remove('activeScoringSessionId');
+    } else {
+      await storage.set('activeScoringSessionId', id);
+    }
+    setData({ ...data, activeScoringSessionId: id ? id : null });
   };
 
   React.useEffect(() => {
