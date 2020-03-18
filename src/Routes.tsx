@@ -2,35 +2,42 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 
-import SeasonsScreen from './screens/Seasons/index';
-import SeasonScreen from './screens/Season/index';
-import PlayScreen from './screens/Play/index';
+import SeasonsScreen from './screens/SeasonsList';
+import SeasonScreen from './screens/Season';
 import EventsScreen from './screens/Events';
-import PlayerPicker from './screens/Play/PlayerPicker';
+import EventScreen from './screens/Event';
+import NewEventScreen from './screens/NewEvent';
+
+import PlayerPicker from './screens/NewScoringSession/PlayerPicker';
+import PlayerSettings from './screens/NewScoringSession/PlayerSettings';
+import TeamSettings from './screens/NewScoringSession/TeamSettings';
 
 import { useStore } from './store';
-import { EventType, EventScoring } from '../types/generatedTypes';
+import {
+  seasonQuery_season_events,
+  playersQuery_players,
+} from '../types/generatedTypes';
 
 export type RootParamList = {
   Seasons: {};
   Season: { seasonId: string };
   Events: {};
+  Event: { event: seasonQuery_season_events };
   PlayStack: {};
 };
 
 export type PlayParamList = {
   Play: {};
   PlayerPicker: {
-    event: {
-      id: string;
-      special: boolean;
-      type: EventType;
-      scoring: EventScoring;
-      course: {
-        club: string;
-        name: string;
-      };
-    };
+    event: seasonQuery_season_events;
+  };
+  PlayerSettings: {
+    event: seasonQuery_season_events;
+    players: playersQuery_players[];
+  };
+  TeamSettings: {
+    event: seasonQuery_season_events;
+    players: playersQuery_players[];
   };
 };
 
@@ -70,6 +77,14 @@ const MainStackScreen = () => (
         headerBackTitleVisible: false,
       }}
     />
+    <MainStack.Screen
+      name="Event"
+      component={EventScreen}
+      options={{
+        title: 'Runda',
+        headerBackTitleVisible: false,
+      }}
+    />
   </MainStack.Navigator>
 );
 
@@ -83,7 +98,7 @@ const PlayStackScreen = () => (
     }}>
     <PlayStack.Screen
       name="Play"
-      component={PlayScreen}
+      component={NewEventScreen}
       options={{
         title: 'Ny runda',
         headerBackTitleVisible: false,
@@ -94,6 +109,22 @@ const PlayStackScreen = () => (
       component={PlayerPicker}
       options={{
         title: 'Välj Spelare',
+        headerBackTitleVisible: false,
+      }}
+    />
+    <PlayStack.Screen
+      name="TeamSettings"
+      component={TeamSettings}
+      options={{
+        title: 'Ställ in Lag & Slag',
+        headerBackTitleVisible: false,
+      }}
+    />
+    <PlayStack.Screen
+      name="PlayerSettings"
+      component={PlayerSettings}
+      options={{
+        title: 'Ställ in Slag',
         headerBackTitleVisible: false,
       }}
     />

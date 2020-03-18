@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
-const allSeasonsQuery = gql`
-  query allSeasonsQuery {
+export default gql`
+  query seasonsQuery {
     seasons(orderBy: { name: desc }) {
       id
       name
@@ -12,5 +12,3 @@ const allSeasonsQuery = gql`
     }
   }
 `;
-
-export default allSeasonsQuery;

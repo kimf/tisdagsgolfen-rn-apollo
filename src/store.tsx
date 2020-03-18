@@ -1,26 +1,27 @@
 import React, { createContext, useContext, useState } from 'react';
 import storage from './localStorage';
 
-export type ContextKey = 'currentSeasonId';
-export type ContextData = string;
-
 interface Data {
   currentSeasonId: string;
+  activeScoringSessionId: string;
   readyForStartup: boolean;
 }
 
 interface StoreContextInterface extends Data {
+  setActiveScoringSessionId: (id: string) => void;
   setData: (data: Data) => void;
 }
 
 const initialData = {
   currentSeasonId: null,
+  activeScoringSessionId: null,
   readyForStartup: false,
 };
 
 const StoreContext = createContext<StoreContextInterface>({
   ...initialData,
   setData: data => null,
+  setActiveScoringSessionId: data => null,
 });
 
 const StoreProvider: React.FC<{ children: React.ReactNode }> = ({
@@ -28,22 +29,32 @@ const StoreProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [data, setData] = useState<Data>();
 
+  const setActiveScoringSessionId = async (id: string) => {
+    await storage.set('activeScoringSessionId', id);
+    setData({ ...data, activeScoringSessionId: id });
+  };
+
   React.useEffect(() => {
-    const fetchCurrentSeason = async () => {
+    const loadInitialData = async () => {
       // await storage.clearStorage();
-      const csId = await storage.get('currentSeasonId');
-      if (csId !== null) {
-        setData({ currentSeasonId: csId, readyForStartup: true });
-      } else {
-        setData({ readyForStartup: true, currentSeasonId: null });
-      }
+      const storedData = await storage.getMultiple([
+        'activeScoringSessionId',
+        'currentSeasonId',
+      ]);
+
+      setData({
+        ...data,
+        ...storedData,
+        readyForStartup: true,
+      });
     };
 
-    fetchCurrentSeason();
+    loadInitialData();
   }, []);
 
   const contextState = {
     ...data,
+    setActiveScoringSessionId,
     setData,
   };
 

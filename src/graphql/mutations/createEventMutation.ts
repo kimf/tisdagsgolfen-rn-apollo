@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
-const createEventMutation = gql`
-  mutation createEventMutation(
+export default gql`
+  mutation createEvent(
     $courseId: Int!
     $seasonId: Int!
     $special: Boolean!
@@ -26,5 +26,3 @@ const createEventMutation = gql`
     }
   }
 `;
-
-export default createEventMutation;

@@ -1995,81 +1995,6 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
-          },
-          {
-            "name": "scores",
-            "description": null,
-            "args": [
-              {
-                "name": "skip",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                },
-                "defaultValue": null
-              },
-              {
-                "name": "after",
-                "description": null,
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "ScoreWhereUniqueInput",
-                  "ofType": null
-                },
-                "defaultValue": null
-              },
-              {
-                "name": "before",
-                "description": null,
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "ScoreWhereUniqueInput",
-                  "ofType": null
-                },
-                "defaultValue": null
-              },
-              {
-                "name": "first",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                },
-                "defaultValue": null
-              },
-              {
-                "name": "last",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                },
-                "defaultValue": null
-              }
-            ],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "OBJECT",
-                    "name": "Score",
-                    "ofType": null
-                  }
-                }
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
           }
         ],
         "inputFields": null,
@@ -3979,7 +3904,7 @@
             "defaultValue": null
           },
           {
-            "name": "player",
+            "name": "players",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -4761,7 +4686,7 @@
             "deprecationReason": null
           },
           {
-            "name": "player",
+            "name": "players",
             "description": null,
             "args": [
               {
@@ -7673,7 +7598,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "ScoringSessionCreateOneWithoutPlayerInput",
+              "name": "ScoringSessionCreateOneWithoutPlayersInput",
               "ofType": null
             },
             "defaultValue": null
@@ -8177,7 +8102,7 @@
             "defaultValue": null
           },
           {
-            "name": "player",
+            "name": "players",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -8871,7 +8796,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "ScoringSessionCreateOneWithoutPlayerInput",
+              "name": "ScoringSessionCreateOneWithoutPlayersInput",
               "ofType": null
             },
             "defaultValue": null
@@ -8995,7 +8920,7 @@
             "defaultValue": null
           },
           {
-            "name": "player",
+            "name": "players",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -9131,7 +9056,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "ScoringSessionCreateOneWithoutPlayerInput",
+        "name": "ScoringSessionCreateOneWithoutPlayersInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -9140,7 +9065,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "ScoringSessionCreateWithoutPlayerInput",
+              "name": "ScoringSessionCreateWithoutPlayersInput",
               "ofType": null
             },
             "defaultValue": null
@@ -9162,7 +9087,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "ScoringSessionCreateWithoutPlayerInput",
+        "name": "ScoringSessionCreateWithoutPlayersInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -9389,7 +9314,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "ScoringSessionCreateOneWithoutPlayerInput",
+              "name": "ScoringSessionCreateOneWithoutPlayersInput",
               "ofType": null
             },
             "defaultValue": null
@@ -10119,7 +10044,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "ScoringSessionUpdateOneWithoutPlayerInput",
+              "name": "ScoringSessionUpdateOneWithoutPlayersInput",
               "ofType": null
             },
             "defaultValue": null
@@ -11455,7 +11380,7 @@
             "defaultValue": null
           },
           {
-            "name": "player",
+            "name": "players",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -13006,7 +12931,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "ScoringSessionUpdateOneWithoutPlayerInput",
+              "name": "ScoringSessionUpdateOneWithoutPlayersInput",
               "ofType": null
             },
             "defaultValue": null
@@ -13226,7 +13151,7 @@
             "defaultValue": null
           },
           {
-            "name": "player",
+            "name": "players",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -13501,7 +13426,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "ScoringSessionUpdateOneWithoutPlayerInput",
+        "name": "ScoringSessionUpdateOneWithoutPlayersInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -13510,7 +13435,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "ScoringSessionCreateWithoutPlayerInput",
+              "name": "ScoringSessionCreateWithoutPlayersInput",
               "ofType": null
             },
             "defaultValue": null
@@ -13550,7 +13475,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "ScoringSessionUpdateWithoutPlayerDataInput",
+              "name": "ScoringSessionUpdateWithoutPlayersDataInput",
               "ofType": null
             },
             "defaultValue": null
@@ -13560,7 +13485,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "ScoringSessionUpsertWithoutPlayerInput",
+              "name": "ScoringSessionUpsertWithoutPlayersInput",
               "ofType": null
             },
             "defaultValue": null
@@ -13572,7 +13497,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "ScoringSessionUpdateWithoutPlayerDataInput",
+        "name": "ScoringSessionUpdateWithoutPlayersDataInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -14147,7 +14072,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "ScoringSessionUpdateOneWithoutPlayerInput",
+              "name": "ScoringSessionUpdateOneWithoutPlayersInput",
               "ofType": null
             },
             "defaultValue": null
@@ -14625,7 +14550,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "ScoringSessionUpsertWithoutPlayerInput",
+        "name": "ScoringSessionUpsertWithoutPlayersInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -14637,7 +14562,7 @@
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "ScoringSessionUpdateWithoutPlayerDataInput",
+                "name": "ScoringSessionUpdateWithoutPlayersDataInput",
                 "ofType": null
               }
             },
@@ -14651,7 +14576,7 @@
               "name": null,
               "ofType": {
                 "kind": "INPUT_OBJECT",
-                "name": "ScoringSessionCreateWithoutPlayerInput",
+                "name": "ScoringSessionCreateWithoutPlayersInput",
                 "ofType": null
               }
             },
@@ -15852,7 +15777,7 @@
             "defaultValue": null
           },
           {
-            "name": "player",
+            "name": "players",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -17279,7 +17204,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "ScoringSessionCreateOneWithoutPlayerInput",
+              "name": "ScoringSessionCreateOneWithoutPlayersInput",
               "ofType": null
             },
             "defaultValue": null
@@ -17370,7 +17295,7 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "ScoringSessionUpdateOneWithoutPlayerInput",
+              "name": "ScoringSessionUpdateOneWithoutPlayersInput",
               "ofType": null
             },
             "defaultValue": null
@@ -17691,7 +17616,7 @@
             "defaultValue": null
           },
           {
-            "name": "player",
+            "name": "players",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -17752,7 +17677,7 @@
             "defaultValue": null
           },
           {
-            "name": "player",
+            "name": "players",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",

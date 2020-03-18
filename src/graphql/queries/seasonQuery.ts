@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
-const seasonQuery = gql`
+export default gql`
   query seasonQuery($id: Int!) {
-    season: season(where: { id: $id }) {
+    season(where: { id: $id }) {
       id
       name
       status
@@ -21,5 +21,3 @@ const seasonQuery = gql`
     }
   }
 `;
-
-export default seasonQuery;

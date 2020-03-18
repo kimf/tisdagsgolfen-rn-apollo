@@ -3,6 +3,7 @@ import AsyncStorageFactory from '@react-native-community/async-storage';
 
 type StorageType = {
   currentSeasonId: string;
+  activeScoringSessionId: string;
 };
 
 const legacyStorage = new LegacyStorage();

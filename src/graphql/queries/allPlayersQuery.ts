@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
-const allPlayersQuery = gql`
-  query allPlayersQuery {
-    players: players(orderBy: { firstName: desc}) {
+export default gql`
+  query playersQuery {
+    players(orderBy: { firstName: desc }) {
       id
       photo
       firstName
@@ -10,4 +10,3 @@ const allPlayersQuery = gql`
     }
   }
 `;
-export default allPlayersQuery;
