@@ -13,14 +13,14 @@ import {
   createEvent,
 } from '../../types/generatedTypes';
 import createEventMutation from '../graphql/mutations/createEventMutation';
-import { PlayParamList } from '../Routes';
+import { PlaySetupParamList } from '../Routes';
 
 import SegmentedButton from '../components/shared/SegmentedButton';
 import { useStore } from '../store';
 import Saving from '../components/Saving';
 
 type Props = {
-  navigation: StackNavigationProp<PlayParamList, 'Play'>;
+  navigation: StackNavigationProp<PlaySetupParamList, 'NewEvent'>;
 };
 
 const CheckedIcon = style => (

@@ -7,7 +7,7 @@ import { useMutation } from '@apollo/client';
 import { DraxView, DraxProvider } from 'react-native-drax';
 
 import { useStore } from '../../store';
-import { PlayParamList } from '../../Routes';
+import { PlaySetupParamList, PlayParamList } from '../../Routes';
 
 import Saving from '../../components/Saving';
 import {
@@ -17,8 +17,8 @@ import {
 import createScoringSessionMutation from '../../graphql/mutations/createTeamScoringSessionMutation';
 
 type Props = {
-  navigation: StackNavigationProp<PlayParamList, 'PlayerSettings'>;
-  route: RouteProp<PlayParamList, 'PlayerSettings'>;
+  navigation: StackNavigationProp<PlayParamList>;
+  route: RouteProp<PlaySetupParamList, 'PlayerSettings'>;
 };
 
 interface TeamState {
@@ -57,7 +57,9 @@ const TeamSettings: React.FC<Props> = ({ navigation, route }) => {
     },
     onCompleted({ createOneScoringSession }) {
       setActiveScoringSessionId(`${createOneScoringSession.id}`);
-      // navigation.replace('PlayerPicker', {});
+      navigation.replace('Play', {
+        scoringSessionId: `${createOneScoringSession.id}`,
+      });
     },
   });
 

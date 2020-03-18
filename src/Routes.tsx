@@ -12,6 +12,8 @@ import PlayerPicker from './screens/NewScoringSession/PlayerPicker';
 import PlayerSettings from './screens/NewScoringSession/PlayerSettings';
 import TeamSettings from './screens/NewScoringSession/TeamSettings';
 
+import PlayScreen from './screens/Play';
+
 import { useStore } from './store';
 import {
   seasonQuery_season_events,
@@ -23,11 +25,12 @@ export type RootParamList = {
   Season: { seasonId: string };
   Events: {};
   Event: { event: seasonQuery_season_events };
+  PlaySetupStack: {};
   PlayStack: {};
 };
 
-export type PlayParamList = {
-  Play: {};
+export type PlaySetupParamList = {
+  NewEvent: {};
   PlayerPicker: {
     event: seasonQuery_season_events;
   };
@@ -41,7 +44,12 @@ export type PlayParamList = {
   };
 };
 
+export type PlayParamList = {
+  Play: { scoringSessionId: string };
+};
+
 const MainStack = createNativeStackNavigator<RootParamList>();
+const PlaySetupStack = createNativeStackNavigator<PlaySetupParamList>();
 const PlayStack = createNativeStackNavigator<PlayParamList>();
 const RootStack = createNativeStackNavigator();
 
@@ -88,6 +96,49 @@ const MainStackScreen = () => (
   </MainStack.Navigator>
 );
 
+const PlaySetupStackScreen = () => (
+  <PlaySetupStack.Navigator
+    screenOptions={{
+      // headerStyle: { backgroundColor: '#000' },
+      // headerTitleStyle: { color: '#fff' },
+      // contentStyle: { backgroundColor: '#fefefe' },
+      headerLargeTitle: false,
+    }}>
+    <PlaySetupStack.Screen
+      name="NewEvent"
+      component={NewEventScreen}
+      options={{
+        title: 'Ny runda',
+        headerBackTitleVisible: false,
+      }}
+    />
+    <PlaySetupStack.Screen
+      name="PlayerPicker"
+      component={PlayerPicker}
+      options={{
+        title: 'Välj Spelare',
+        headerBackTitleVisible: false,
+      }}
+    />
+    <PlaySetupStack.Screen
+      name="TeamSettings"
+      component={TeamSettings}
+      options={{
+        title: 'Ställ in Lag & Slag',
+        headerBackTitleVisible: false,
+      }}
+    />
+    <PlaySetupStack.Screen
+      name="PlayerSettings"
+      component={PlayerSettings}
+      options={{
+        title: 'Ställ in Slag',
+        headerBackTitleVisible: false,
+      }}
+    />
+  </PlaySetupStack.Navigator>
+);
+
 const PlayStackScreen = () => (
   <PlayStack.Navigator
     screenOptions={{
@@ -98,34 +149,10 @@ const PlayStackScreen = () => (
     }}>
     <PlayStack.Screen
       name="Play"
-      component={NewEventScreen}
+      component={PlayScreen}
       options={{
-        title: 'Ny runda',
-        headerBackTitleVisible: false,
-      }}
-    />
-    <PlayStack.Screen
-      name="PlayerPicker"
-      component={PlayerPicker}
-      options={{
-        title: 'Välj Spelare',
-        headerBackTitleVisible: false,
-      }}
-    />
-    <PlayStack.Screen
-      name="TeamSettings"
-      component={TeamSettings}
-      options={{
-        title: 'Ställ in Lag & Slag',
-        headerBackTitleVisible: false,
-      }}
-    />
-    <PlayStack.Screen
-      name="PlayerSettings"
-      component={PlayerSettings}
-      options={{
-        title: 'Ställ in Slag',
-        headerBackTitleVisible: false,
+        title: 'Scoring',
+        headerBackTitleVisible: true,
       }}
     />
   </PlayStack.Navigator>
@@ -168,13 +195,23 @@ const Routes = () => {
           options={{ headerShown: false }}
         />
         <RootStack.Screen
-          name="PlayStack"
-          component={PlayStackScreen}
+          name="PlaySetupStack"
+          component={PlaySetupStackScreen}
           options={{
             headerShown: false,
             stackPresentation: 'modal',
             stackAnimation: 'default', // flip, fade, none,
             gestureEnabled: true, // Set this dynamically?
+          }}
+        />
+        <RootStack.Screen
+          name="PlayStack"
+          component={PlayStackScreen}
+          options={{
+            headerShown: false,
+            stackPresentation: 'fullScreenModal',
+            stackAnimation: 'flip',
+            gestureEnabled: false,
           }}
         />
       </RootStack.Navigator>

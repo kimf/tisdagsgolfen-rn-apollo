@@ -16,6 +16,7 @@ import {
   EventStatus,
 } from '../../types/generatedTypes';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { useStore } from '../store';
 
 type Props = {
   navigation: StackNavigationProp<RootParamList, 'Season'>;
@@ -23,8 +24,13 @@ type Props = {
 };
 
 const Season: React.FC<Props> = ({ navigation, route }) => {
+  const { activeScoringSessionId, setActiveScoringSessionId } = useStore();
   const goToEvents = () => navigation.navigate('Events');
-  const goPlay = () => navigation.navigate('PlayStack');
+  const goSetupPlay = () => navigation.navigate('PlaySetupStack');
+  const goPlay = () =>
+    navigation.navigate('PlayStack', {
+      scoringSessionId: activeScoringSessionId,
+    });
 
   const { loading, data, refetch } = useQuery<
     QSeasonQuery,
@@ -39,7 +45,20 @@ const Season: React.FC<Props> = ({ navigation, route }) => {
       : [];
 
   React.useLayoutEffect(() => {
-    if (
+    if (activeScoringSessionId) {
+      navigation.setOptions({
+        headerRight: () => (
+          <Kitten.Button
+            size="small"
+            appearance="outline"
+            status="success"
+            icon={PlayIcon}
+            onPress={goPlay}>
+            FORTSÄTT
+          </Kitten.Button>
+        ),
+      });
+    } else if (
       data?.season?.status === SeasonStatus.REGULAR &&
       activeEvents.length === 0
     ) {
@@ -50,13 +69,13 @@ const Season: React.FC<Props> = ({ navigation, route }) => {
             appearance="outline"
             status="primary"
             icon={PlayIcon}
-            onPress={goPlay}>
+            onPress={goSetupPlay}>
             NY RUNDA
           </Kitten.Button>
         ),
       });
     }
-  }, [navigation, data]);
+  }, [navigation, data, activeScoringSessionId]);
 
   React.useEffect(() => {
     storage.set('currentSeasonId', route.params.seasonId);
@@ -86,6 +105,13 @@ const Season: React.FC<Props> = ({ navigation, route }) => {
       <Kitten.Button appearance="ghost" onPress={goToEvents}>
         Show Events
       </Kitten.Button>
+      {activeScoringSessionId && (
+        <Kitten.Button
+          status="danger"
+          onPress={() => setActiveScoringSessionId(null)}>
+          RADERA AKTIV SESSION
+        </Kitten.Button>
+      )}
     </Kitten.Layout>
   );
 };

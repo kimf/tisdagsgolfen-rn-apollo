@@ -76,6 +76,31 @@ export interface teamScoringSessionVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: delEvent
+// ====================================================
+
+export interface delEvent_deleteManyScoringSession {
+  count: number;
+}
+
+export interface delEvent_deleteOneEvent {
+  __typename: "Event";
+}
+
+export interface delEvent {
+  deleteManyScoringSession: delEvent_deleteManyScoringSession;
+  deleteOneEvent: delEvent_deleteOneEvent | null;
+}
+
+export interface delEventVariables {
+  id: number;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL query operation: playersQuery
 // ====================================================
 

@@ -4,7 +4,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RouteProp } from '@react-navigation/core';
 import { useMutation } from '@apollo/client';
 
-import { PlayParamList } from '../../Routes';
+import { PlaySetupParamList, PlayParamList } from '../../Routes';
 import {
   playersQuery_players,
   scoringSessionVariables,
@@ -16,8 +16,8 @@ import { useStore } from '../../store';
 import Saving from '../../components/Saving';
 
 type Props = {
-  navigation: StackNavigationProp<PlayParamList, 'PlayerSettings'>;
-  route: RouteProp<PlayParamList, 'PlayerSettings'>;
+  navigation: StackNavigationProp<PlayParamList>;
+  route: RouteProp<PlaySetupParamList, 'PlayerSettings'>;
 };
 
 interface PlayingPlayer extends playersQuery_players {
@@ -51,7 +51,9 @@ const PlayerSettings: React.FC<Props> = ({ navigation, route }) => {
     },
     onCompleted({ createOneScoringSession }) {
       setActiveScoringSessionId(`${createOneScoringSession.id}`);
-      // navigation.replace('PlayerPicker', {});
+      navigation.replace('Play', {
+        scoringSessionId: `${createOneScoringSession.id}`,
+      });
     },
   });
 

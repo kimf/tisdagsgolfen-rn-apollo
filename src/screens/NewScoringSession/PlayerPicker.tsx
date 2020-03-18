@@ -5,14 +5,14 @@ import { useQuery } from '@apollo/client';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RouteProp } from '@react-navigation/core';
 
-import { PlayParamList } from '../../Routes';
+import { PlaySetupParamList } from '../../Routes';
 import allPlayersQuery from '../../graphql/queries/allPlayersQuery';
 import { playersQuery, EventType } from '../../../types/generatedTypes';
 // import EventHeader from '../../components/Play/EventHeader';
 
 type Props = {
-  navigation: StackNavigationProp<PlayParamList, 'PlayerPicker'>;
-  route: RouteProp<PlayParamList, 'PlayerPicker'>;
+  navigation: StackNavigationProp<PlaySetupParamList, 'PlayerPicker'>;
+  route: RouteProp<PlaySetupParamList, 'PlayerPicker'>;
 };
 
 const PlayerPicker: React.FC<Props> = ({ navigation, route }) => {

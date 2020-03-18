@@ -1,11 +1,9 @@
 # Notes
 
-- New Scoring Session
-- Show and link ActiveScoringSession on frontpage
-- Fail to create event if active event is existing
-- Disable button on saving...
-- Show loader...
-- Save scoringSessionId on device? (Some override if person reinstalls app.. (tap 7 times, get question: "Do you want to take over this?"))
+- [] Fail to create event if active event
+- [] Actual Scoring view
+- [] Leaderboards
+- [] Event detail view
 
 ```javascript
 // Put around routing stack

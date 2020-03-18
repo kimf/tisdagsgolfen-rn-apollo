@@ -1,11 +1,14 @@
 import * as React from 'react';
 import * as Kitten from '@ui-kitten/components';
-
-import { PlayIcon } from '../components/icons';
 import { RouteProp } from '@react-navigation/core';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { useMutation } from '@apollo/client';
+
+import { PlayIcon } from '../components/icons';
 import { RootParamList } from '../Routes';
 import { useStore } from '../store';
+import { delEvent, delEventVariables } from '../../types/generatedTypes';
+import deleteEventMutation from '../graphql/mutations/deleteEventMutation';
 
 type Props = {
   navigation: StackNavigationProp<RootParamList, 'Event'>;
@@ -16,17 +19,26 @@ const Event: React.FC<Props> = ({ navigation, route }) => {
   const event = route.params.event;
   const { activeScoringSessionId } = useStore();
 
+  const [delEvent] = useMutation<delEvent, delEventVariables>(
+    deleteEventMutation,
+    {
+      variables: { id: route.params.event.id },
+      onCompleted() {
+        navigation.goBack();
+      },
+    },
+  );
+
   const goSetupPlay = () =>
-    navigation.navigate('PlayStack', {
+    navigation.navigate('PlaySetupStack', {
       screen: 'PlayerPicker',
       params: { event },
     });
 
-  const goPlay = () => null;
-  // navigation.replace('PlayForRealStack', {
-  //   screen: 'PlayerPicker',
-  //   params: { event },
-  // });
+  const goPlay = () =>
+    navigation.navigate('PlayStack', {
+      scoringSessionId: activeScoringSessionId,
+    });
 
   React.useLayoutEffect(() => {
     navigation.setOptions({
@@ -47,6 +59,9 @@ const Event: React.FC<Props> = ({ navigation, route }) => {
     <Kitten.Layout
       style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Kitten.Text>Ledartavla här....</Kitten.Text>
+      <Kitten.Button status="danger" onPress={() => delEvent()}>
+        RADERA
+      </Kitten.Button>
     </Kitten.Layout>
   );
 };
